@@ -2,6 +2,7 @@ import Home from "../pages/Home";
 import Contact from "../pages/Contact";
 import Service from "../pages/Service";
 import Blog from "../pages/Blog";
+import New from "../pages/New";
 
 export const publicRouter = [
   {
@@ -13,7 +14,11 @@ export const publicRouter = [
     component: Contact,
   },
   {
-    path: "/service",
+    path: "/new",
+    component: New,
+  },
+  {
+    path: "/services",
     component: Service,
   },
   {

@@ -1,8 +1,97 @@
+@import "../App.scss";
+
 .layout {
   display: flex;
 }
 .menu {
   width: 150px;
-  height: 100vh;
+  max-width: 150px;
+  position: fixed;
+  top: 0;
+  bottom: 0;
   background-color: #191718;
+  ul {
+    display: flex;
+    flex-direction: column;
+    li {
+      padding: 10px;
+      color: #aaaaaa;
+      transition: 0.2s ease;
+      cursor: pointer;
+      &:hover {
+        color: #fff;
+      }
+      &.active {
+        color: #fff;
+      }
+
+      a {
+        font-size: 1.2rem;
+        text-decoration: none;
+        color: inherit;
+      }
+    }
+  }
+}
+
+.content {
+  width: 100%;
+  margin-left: 150px;
+  padding: 20px 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @include tablet {
+    padding: 20px;
+  }
+  .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    @include tablet {
+      width: 200px;
+      margin: 20px auto;
+    }
+  }
+  .title {
+    text-align: center;
+    background-color: #efefef;
+    padding: 20px 150px;
+    margin-bottom: 40px;
+    @include tablet {
+      padding: 20px;
+    }
+    h1 {
+      margin-bottom: 18px;
+    }
+  }
+
+  .list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    @include tablet {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    &-item {
+      &-heading {
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-bottom: 18px;
+      }
+      &-info {
+        &-content {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+    }
+  }
+}
+
+.footer {
+  padding: 20px;
+  margin-top: 20px;
+  color: blue;
 }
